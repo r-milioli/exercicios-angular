@@ -77,4 +77,4 @@ src/app/
 
 ## 👨‍💻 Autor
 
-Desenvolvido por [Seu Nome] para fins educacionais.
+Desenvolvido por Robson Milioli para fins educacionais.
