@@ -1,0 +1,29 @@
+<div class="contato-container">
+  <h2>Contato</h2>
+  <form [formGroup]="contatoForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input id="nome" type="text" formControlName="nome" />
+      <div class="erro" *ngIf="contatoForm.get('nome')?.touched && contatoForm.get('nome')?.invalid">
+        O nome é obrigatório.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      <div class="erro" *ngIf="contatoForm.get('email')?.touched && contatoForm.get('email')?.invalid">
+        <span *ngIf="contatoForm.get('email')?.errors?.['required']">O email é obrigatório.</span>
+        <span *ngIf="contatoForm.get('email')?.errors?.['email']">Formato de email inválido.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" formControlName="mensagem" rows="4"></textarea>
+      <div class="erro" *ngIf="contatoForm.get('mensagem')?.touched && contatoForm.get('mensagem')?.invalid">
+        <span *ngIf="contatoForm.get('mensagem')?.errors?.['required']">A mensagem é obrigatória.</span>
+        <span *ngIf="contatoForm.get('mensagem')?.errors?.['minlength']">A mensagem deve ter pelo menos 10 caracteres.</span>
+      </div>
+    </div>
+    <button type="submit">Enviar</button>
+  </form>
+</div> 

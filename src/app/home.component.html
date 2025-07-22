@@ -1,0 +1,8 @@
+<h2>Produtos em Destaque</h2>
+<div class="produtos-grid">
+  <div class="card" *ngFor="let produto of produtos">
+    <img [src]="produto.foto" [alt]="produto.rotulo" class="card-img">
+    <h3>{{ produto.rotulo }}</h3>
+    <p>{{ produto.detalhe }}</p>
+  </div>
+</div> 

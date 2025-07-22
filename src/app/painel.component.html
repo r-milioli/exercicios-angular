@@ -1,0 +1,17 @@
+<div class="login-container">
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+    <h2>Tela de login:</h2>
+    <label for="usuario"><b>LOGIN:</b></label>
+    <input id="usuario" name="usuario" [(ngModel)]="usuario" required autocomplete="off" />
+
+    <label for="senha"><b>SENHA:</b></label>
+    <input id="senha" name="senha" type="password" [(ngModel)]="senha" required />
+
+    <button type="submit">LOGAR</button>
+    <div class="erro" *ngIf="erro">{{ erro }}</div>
+  </form>
+  <div class="info">
+    <p>Se senha e login corretos, logar no componente: painelControle.<br>
+    Caso contrário redirecionar para home</p>
+  </div>
+</div> 
